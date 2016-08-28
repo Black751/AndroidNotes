@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -38,6 +39,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         lv.setOnItemClickListener(this);
         notesList = new ArrayList();
         notes = new HashMap<>();
+
+        Button buttonAddNotes = (Button)findViewById(R.id.main_button_addNotes);
+        buttonAddNotes.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                onAddNote();
+            }
+        });
 
 
         String[] list = new String[notesList.size()];
